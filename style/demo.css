@@ -4,9 +4,18 @@ body {
 .network {
     background: white;
     border: 1px solid gray;
+    display: inline-block;
 }
 
 #network1 {
     width: 50%;
     height: 70%;
+}
+#network2 {
+    width: 200px;
+    height: 100px;
+}
+#network3 {
+    width: 300px;
+    height: 300px;
 }
