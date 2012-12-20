@@ -1,4 +1,4 @@
 networkview
 ===========
 
-An SVG node-link diagram widget, using D3.js.
+An SVG node-link diagram widget, made with D3.js.
