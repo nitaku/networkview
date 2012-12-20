@@ -1,7 +1,7 @@
 networkview
 ===========
 
-An SVG node-link diagram widget, made with [D3.js](http://d3js.org). A simple demo is avaliable [here](http://wafi.iit.cnr.it/webvis/diagrams/network/) (also included in the code).
+An SVG node-link diagram widget for undirected graphs, made with [D3.js](http://d3js.org). A simple demo is avaliable [here](http://wafi.iit.cnr.it/webvis/diagrams/network/) (also included in the code).
 
 Source is written in [coffeescript](http://coffeescript.org) ([coffee](https://github.com/nitaku/networkview/tree/master/coffee) folder), then compiled into standard Javascript ([js](https://github.com/nitaku/networkview/tree/master/js) folder).
 
