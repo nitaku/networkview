@@ -28,19 +28,19 @@ In your Javascript code, just define or fetch a JSON file representing the graph
 ```json
 {
   "nodes": [
-    {"name": "A", "group": 1, "size": 4},
-    {"name": "B", "group": 1, "size": 2},
-    {"name": "C", "group": 2, "size": 7}
+    {"name": "A", "type": "one", "size": 4},
+    {"name": "B", "type": "one", "size": 2},
+    {"name": "C", "type": "two", "size": 7}
   ],
   "links": [
-    {"source": 0, "target": 1, "weight" 2},
-    {"source": 0, "target": 2, "weight" 1},
-    {"source": 1, "target": 2, "weight" 3},
+    {"source": 0, "target": 1, "type": 1, "weight": 2},
+    {"source": 0, "target": 2, "type": 1, "weight": 1},
+    {"source": 1, "target": 2, "type": 2, "weight": 3},
   ]
 }
 ```
 
-where `group`, `size` and `weight` are optional properties.
+where `type`, `size` and `weight` are optional properties.
 
 Then pass the JSON object to the NetworkView's constructor, along with a selector matching the SVG node:
 
