@@ -3,7 +3,7 @@ networkview
 
 An SVG node-link diagram widget, made with [D3.js](http://d3js.org).
 
-Source is written in [coffeescript](http://coffeescript.org) (`coffee` folder), then compiled into standard Javascript (`js` folder).
+Source is written in [coffeescript](http://coffeescript.org) ([coffee](https://github.com/nitaku/networkview/tree/master/coffee) folder), then compiled into standard Javascript ([js](https://github.com/nitaku/networkview/tree/master/js) folder).
 
 In order to use networkview, you must include the following lines into your HTML head:
 
