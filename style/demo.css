@@ -1,0 +1,12 @@
+body {
+    background: #DDD;
+}
+.network {
+    background: white;
+    border: 1px solid gray;
+}
+
+#network1 {
+    width: 50%;
+    height: 70%;
+}
