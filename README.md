@@ -40,7 +40,9 @@ In your Javascript code, just define or fetch a JSON file representing the graph
 }
 ```
 
-where `group`, `size` and `weight` are optional properties, then pass it to the NetworkView's constructor, along with a selector matching the SVG node:
+where `group`, `size` and `weight` are optional properties.
+
+Then pass it to the NetworkView's constructor, along with a selector matching the SVG node:
 
 ```javascript
 var net = new NetworkView({selector: '#the_graph', graph: json_graph});
