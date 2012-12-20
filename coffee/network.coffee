@@ -15,18 +15,27 @@ class NetworkView
         @svg = d3.selectAll(params.selector)
         
         ### scales ###
-        @group2color = d3.scale.category10()
+        node_type2color_scale = d3.scale.ordinal()
+            .domain([0...10])
+            .range(['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#bcbd22', '#17becf', '#1f77b4'])
+        @node_type2color = (type) -> if type? then node_type2color_scale(type) else '#7f7f7f'
         
-        pre_node_size2radius = d3.scale.linear()
+        link_type2color_scale = d3.scale.ordinal()
+            .domain([0...10])
+            .range(['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#bcbd22', '#17becf', '#1f77b4'])
+        @link_type2color = (type) -> if type? then link_type2color_scale(type) else '#7f7f7f'
+        
+        node_size2radius_scale = d3.scale.linear()
             .domain([1,5]) # FIXME hardcoded data values
             .range([MIN_NODE_R,MAX_NODE_R])
             .clamp(true)
-        @node_size2radius = (size) -> if size? then pre_node_size2radius(size) else AVG_NODE_R
+        @node_size2radius = (size) -> if size? then node_size2radius_scale(size) else AVG_NODE_R
         
-        @link_weight2stroke_width = d3.scale.linear()
+        link_weight2stroke_width_scale = d3.scale.linear()
             .domain([0,50]) # FIXME hardcoded data values
             .range([1,MIN_NODE_R*2])
             .clamp(true)
+        @link_weight2stroke_width = (weight) -> if weight? then link_weight2stroke_width_scale(weight) else 1
         
         ### empirical values for viewbox ###
         @svg.attr('viewBox', '-100 -100 300 300')
@@ -43,6 +52,7 @@ class NetworkView
             .data(@graph.links)
             .enter().append('line')
                 .attr('class', 'link')
+                .attr('stroke', (d) => @link_type2color(d.type))
                 .attr('stroke-width', (d) => @link_weight2stroke_width(d.weight))
                 
         @nodes = @svg.selectAll('.node')
@@ -50,7 +60,7 @@ class NetworkView
             .enter().append('circle')
                 .attr('class', 'node')
                 .attr('r', (d) => @node_size2radius(d.size))
-                .attr('fill', (d) => @group2color(d.group))
+                .attr('fill', (d) => @node_type2color(d.type))
                 .call(@force.drag)
                 
         @force.on 'tick', @_on_tick
