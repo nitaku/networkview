@@ -1,9 +1,14 @@
 networkview
 ===========
 
-An SVG node-link diagram widget, made with [D3.js](http://d3js.org). [Demo](http://wafi.iit.cnr.it/webvis/diagrams/network/) (also included in the code).
+An SVG node-link diagram widget, made with [D3.js](http://d3js.org).
+
+Click here for a simple [demo](http://wafi.iit.cnr.it/webvis/diagrams/network/) (also included in the code).
 
 Source is written in [coffeescript](http://coffeescript.org) ([coffee](https://github.com/nitaku/networkview/tree/master/coffee) folder), then compiled into standard Javascript ([js](https://github.com/nitaku/networkview/tree/master/js) folder).
+
+Usage
+-----
 
 In order to use networkview, you must include the following lines into your HTML head:
 
