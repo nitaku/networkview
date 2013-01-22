@@ -35,7 +35,7 @@ In your Javascript code, just define or fetch a JSON file representing the graph
   "links": [
     {"source": 0, "target": 1, "type": 1, "weight": 2},
     {"source": 0, "target": 2, "type": 1, "weight": 1},
-    {"source": 1, "target": 2, "type": 2, "weight": 3},
+    {"source": 1, "target": 2, "type": 2, "weight": 3}
   ]
 }
 ```
